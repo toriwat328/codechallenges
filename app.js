@@ -336,12 +336,18 @@
 
 function repeatedString3(s, n){
 
+//function to split to an array and filter for a can find the length of array
     const counta = (str) => str.split('')
     .filter(c => c == 'a')
     .length
 
+//how many time you have to repeat s
   const d = Math.floor(n / s.length)
+
+//multiply how many times to repeat s (2) by s.length (5) and subtract that by n to calculate the reminder
   const r = n - (s.length * d)
+
+  //invoke the counta function with s as the argument and multiply it by d which is how many times it needs to be repeated. To account for the reminder, we invoke counta with a substr with the length of the reminder and return the count.
   return d * counta(s) + counta(s.substr(0, r))
 }
 
