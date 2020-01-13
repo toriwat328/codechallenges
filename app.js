@@ -349,6 +349,7 @@ function repeatedString3(s, n){
 
   //invoke the counta function with s as the argument and multiply it by d which is how many times it needs to be repeated. To account for the reminder, we invoke counta with a substr with the length of the reminder and return the count.
   return d * counta(s) + counta(s.substr(0, r))
+
 }
 
-console.log(repeatedString3('aba', 10));
+console.log(repeatedString3('abcac', 10));
