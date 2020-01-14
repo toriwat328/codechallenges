@@ -15,4 +15,4 @@ const myArray = [1,4,6,9,10];
 
 const result = recursiveBinarySearch(myArray, 9, 0, 4);
 //start at index 0 and then end at index myArray.length
-console.log(result);
+console.log(result); 
