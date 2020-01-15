@@ -334,22 +334,58 @@
 //
 // console.log(repeatedString2('aba', 10));
 
-function repeatedString3(s, n){
+// function repeatedString3(s, n){
+//
+// //function to split to an array and filter for a can find the length of array
+//     const counta = (str) => str.split('')
+//     .filter(c => c == 'a')
+//     .length
+//
+// //how many time you have to repeat s
+//   const d = Math.floor(n / s.length)
+//
+// //multiply how many times to repeat s (2) by s.length (5) and subtract that by n to calculate the reminder
+//   const r = n - (s.length * d)
+//
+//   //invoke the counta function with s as the argument and multiply it by d which is how many times it needs to be repeated. To account for the reminder, we invoke counta with a substr with the length of the reminder and return the count.
+//   return d * counta(s) + counta(s.substr(0, r))
+//
+// }
+//
+// console.log(repeatedString3('abcac', 10));
 
-//function to split to an array and filter for a can find the length of array
-    const counta = (str) => str.split('')
-    .filter(c => c == 'a')
-    .length
 
-//how many time you have to repeat s
-  const d = Math.floor(n / s.length)
+// a = array, n = integers, d = left rotations
+// n = 5, d = 4, a = [1,2,3,4,5] => [5,1,2,3,4] for 4 rotations
 
-//multiply how many times to repeat s (2) by s.length (5) and subtract that by n to calculate the reminder
-  const r = n - (s.length * d)
+const arr = [1,2,3,4,5]
 
-  //invoke the counta function with s as the argument and multiply it by d which is how many times it needs to be repeated. To account for the reminder, we invoke counta with a substr with the length of the reminder and return the count.
-  return d * counta(s) + counta(s.substr(0, r))
+//a[0] = a[4] a.length-1 = 4 - 0
+//a[1] = a[0]  a.length-1 = 4 - 4
+//a[2] = a[1]  a.length-1 = 4 - 3
+//a[3] = a[2]  a.length-1 = 4 - 2
+//a[4] = a[3]  a.length-1 = 4 - 1
+// we are decreasing each index by 1 each rotation if the index is 0 it equals a.length -1
+
+//so with 4 rotations, index of 4 which equals 5 becomes index of 0 original index - rotation = new index?
+// index 0 (1) - 1 = 5
+// index 3 (4) - 4  = -1 but should be 4
+// index 2 (3) - 4 = should be 3
+// index 1 (2) - 4 = should be 2
+
+//so value at index 0 is always equal to array.length -1
+//so value at index 1 is array.length -2
+
+const leftrotate = (a, n, d) => {
+
+
+        for(let i = 0; i < d; i++){
+            a.splice(a.length, 0, a[0]);
+            a.shift();
+        }
+
+    return a;
 
 }
 
-console.log(repeatedString3('abcac', 10));
+console.log(leftrotate(arr, 5, 4));
