@@ -376,7 +376,7 @@ const arr = [1,2,3,4,5]
 //so value at index 0 is always equal to array.length -1
 //so value at index 1 is array.length -2
 
-const leftrotate = (a, n, d) => {
+const leftrotate = (a, d) => {
 
 
         for(let i = 0; i < d; i++){
