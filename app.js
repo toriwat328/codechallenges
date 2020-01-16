@@ -420,29 +420,61 @@
 //
 // console.log(twoString('hello', 'world'));
 
-//This solution is not working. Think that i need to incorporate a hashtable. I would need to insert magazine into the hashtable and then look up each word in note to see if it is there. 
+//This solution is not working. Think that i need to incorporate a hashtable. I would need to insert magazine into the hashtable and then look up each word in note to see if it is there.
+
+//MAJOR KEY - JS arrays ARE hash tables!
+// const checkMagazines = (magazine, note) => {
+//     let wordcount = 0;
+//
+//     const mySet = new Set()
+//
+//     for(let i = 0; i < magazine.length; i++){
+//         if(!mySet.has(magazine[i])){
+//             mySet.add(magazine[i])
+//         }
+//     }
+//
+//     for(let i = 0; i < note.length; i++){
+//         if(mySet.has(note[i])){
+//            wordcount++
+//         }
+//     }
+//
+//     if(wordcount !== note.length){
+//         return 'No'
+//     } else {
+//         return 'Yes'
+//     }
+// }
+
 const checkMagazines = (magazine, note) => {
+    //magazine is a hashtable
     let wordcount = 0;
 
-    const mySet = new Set()
+    const mag = new Map();
 
     for(let i = 0; i < magazine.length; i++){
-        if(!mySet.has(magazine[i])){
-            mySet.add(magazine[i])
-        }
+        mag.set(magazine[i], i);
     }
 
+    console.log(mag);
+
     for(let i = 0; i < note.length; i++){
-        if(mySet.has(note[i])){
-           wordcount++
+        if(mag.has(note[i])){
+            wordcount++;
+            mag.delete(note[i])
         }
     }
 
     if(wordcount !== note.length){
-        return 'No'
+        return 'No';
     } else {
-        return 'Yes'
+        return 'Yes';
     }
 }
 
 console.log(checkMagazines(['give', 'me', 'one', 'grand', 'today', 'night'], ['give', 'one', 'grand', 'today']));
+
+// console.log(checkMagazines(['two', 'times', 'three', 'is', 'not', 'four'], ['two', 'times', 'two', 'is', 'four']));
+
+// console.log(checkMagazines(['ive', 'got', 'a', 'lovely', 'bunch', 'of', 'coconuts'], ['ive', 'got', 'some', 'coconuts']));
