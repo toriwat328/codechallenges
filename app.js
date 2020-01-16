@@ -392,30 +392,57 @@
 
 //TwoStrings
 
-const twoString = (s1, s2) => {
-    const string1 = s1.split('')
-    const string2 = s2.split('')
+// const twoString = (s1, s2) => {
+//     const string1 = s1.split('')
+//     const string2 = s2.split('')
+//
+//     const mySet = new Set()
+//
+//     for(let i = 0; i < string1.length; i++){
+//         if(!mySet.has(string1[i])){
+//             mySet.add(string1[i]);
+//         }
+//     }
+//
+//     let count = 0;
+//
+//     for(let i = 0; i < string2.length; i++){
+//         if(mySet.has(string2[i])){
+//             count++;
+//             return 'YES'
+//         }
+//     }
+//
+//     if(count === 0){
+//         return 'NO'
+//     }
+// }
+//
+// console.log(twoString('hello', 'world'));
+
+//This solution is not working. Think that i need to incorporate a hashtable. I would need to insert magazine into the hashtable and then look up each word in note to see if it is there. 
+const checkMagazines = (magazine, note) => {
+    let wordcount = 0;
 
     const mySet = new Set()
 
-    for(let i = 0; i < string1.length; i++){
-        if(!mySet.has(string1[i])){
-            mySet.add(string1[i]);
+    for(let i = 0; i < magazine.length; i++){
+        if(!mySet.has(magazine[i])){
+            mySet.add(magazine[i])
         }
     }
 
-    let count = 0;
-
-    for(let i = 0; i < string2.length; i++){
-        if(mySet.has(string2[i])){
-            count++;
-            return 'YES'
+    for(let i = 0; i < note.length; i++){
+        if(mySet.has(note[i])){
+           wordcount++
         }
     }
 
-    if(count === 0){
-        return 'NO'
+    if(wordcount !== note.length){
+        return 'No'
+    } else {
+        return 'Yes'
     }
 }
 
-console.log(twoString('hello', 'world'));
+console.log(checkMagazines(['give', 'me', 'one', 'grand', 'today', 'night'], ['give', 'one', 'grand', 'today']));
