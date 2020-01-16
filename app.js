@@ -358,7 +358,7 @@
 // a = array, n = integers, d = left rotations
 // n = 5, d = 4, a = [1,2,3,4,5] => [5,1,2,3,4] for 4 rotations
 
-const arr = [1,2,3,4,5]
+// const arr = [1,2,3,4,5]
 
 //a[0] = a[4] a.length-1 = 4 - 0
 //a[1] = a[0]  a.length-1 = 4 - 4
@@ -376,16 +376,42 @@ const arr = [1,2,3,4,5]
 //so value at index 0 is always equal to array.length -1
 //so value at index 1 is array.length -2
 
-const leftrotate = (a, d) => {
+// const leftrotate = (a, d) => {
+//
+//
+//         for(let i = 0; i < d; i++){
+//             a.splice(a.length, 0, a[0]);
+//             a.shift();
+//         }
+//
+//     return a;
+//
+// }
+//
+// console.log(leftrotate(arr, 5, 4));
+
+//TwoStrings
+
+const twoString = (s1, s2) => {
+    const string1 = s1.split('')
+    const string2 = s2.split('')
 
 
-        for(let i = 0; i < d; i++){
-            a.splice(a.length, 0, a[0]);
-            a.shift();
+    let count = 0;
+
+    for(let i = 0; i < string1.length; i++){
+        for(let j = 0; j < string2.length; j++ ){
+            if(string1[i] === string2[j]){
+                count++;
+                return 'YES'
+
+            }
         }
+    }
 
-    return a;
-
+    if(count === 0){
+        return 'NO'
+    }
 }
 
-console.log(leftrotate(arr, 5, 4));
+console.log(twoString('hi', 'world'));
