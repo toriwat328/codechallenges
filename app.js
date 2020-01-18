@@ -494,17 +494,14 @@ let arr = [4,2,3,1]
 
 const bubblesort = (a) => {
     let numOfSwaps = 0;
-    console.log(a);
 
     for (let i = 0; i < a.length; i++) {
         for (let j = 0; j < a.length - 1; j++) {
-            console.log(j);
-            // Swap adjacent elements if they are in decreasing order
+
             if (a[j] > a[j + 1]) {
                 let index = a[j]
                 a[j] = a[j+1]
                 a[j+1] = index
-                console.log(a);
                 numOfSwaps++;
             }
         }
