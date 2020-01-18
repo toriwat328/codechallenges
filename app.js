@@ -490,16 +490,32 @@
 
 // console.log(checkMagazines(['ive', 'got', 'a', 'lovely', 'bunch', 'of', 'coconuts'], ['ive', 'got', 'some', 'coconuts']));
 
-const bubblesort = () => {
-    let numOfSwaps = 0;
+let arr = [4,2,3,1]
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - 1; j++) {
+const bubblesort = (a) => {
+    let numOfSwaps = 0;
+    console.log(a);
+
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a.length - 1; j++) {
+            console.log(j);
             // Swap adjacent elements if they are in decreasing order
             if (a[j] > a[j + 1]) {
-                swap(a[j], a[j + 1]);
-                
+                let index = a[j]
+                a[j] = a[j+1]
+                a[j+1] = index
+                console.log(a);
+                numOfSwaps++;
             }
         }
     }
+
+    console.log(`Array is sorted in ${numOfSwaps} swaps.`);
+    console.log(`First Element: ${a[0]}`);
+    console.log(`Last Element: ${a[a.length-1]},`);
+
+    return
 }
+
+
+console.log(bubblesort(arr));
