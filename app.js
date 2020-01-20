@@ -490,29 +490,54 @@
 
 // console.log(checkMagazines(['ive', 'got', 'a', 'lovely', 'bunch', 'of', 'coconuts'], ['ive', 'got', 'some', 'coconuts']));
 
-let arr = [4,2,3,1]
+// let arr = [4,2,3,1]
+//
+// const bubblesort = (a) => {
+//     let numOfSwaps = 0;
+//
+//     for (let i = 0; i < a.length; i++) {
+//         for (let j = 0; j < a.length - 1; j++) {
+//
+//             if (a[j] > a[j + 1]) {
+//                 let index = a[j]
+//                 a[j] = a[j+1]
+//                 a[j+1] = index
+//                 numOfSwaps++;
+//             }
+//         }
+//     }
+//
+//     console.log(`Array is sorted in ${numOfSwaps} swaps.`);
+//     console.log(`First Element: ${a[0]}`);
+//     console.log(`Last Element: ${a[a.length-1]},`);
+//
+//     return
+// }
+//
+//
+// console.log(bubblesort(arr));
+let pricesArr = [1,4,2,1,9];
 
-const bubblesort = (a) => {
-    let numOfSwaps = 0;
+const maximumToys = (prices, b, gifts) => {
+    let sortprices = prices.sort();
+    console.log(sortprices);
 
-    for (let i = 0; i < a.length; i++) {
-        for (let j = 0; j < a.length - 1; j++) {
 
-            if (a[j] > a[j + 1]) {
-                let index = a[j]
-                a[j] = a[j+1]
-                a[j+1] = index
-                numOfSwaps++;
-            }
-        }
+    if(b <= 0){
+        console.log('reached my limit: ', gifts);
+        return gifts;
     }
 
-    console.log(`Array is sorted in ${numOfSwaps} swaps.`);
-    console.log(`First Element: ${a[0]}`);
-    console.log(`Last Element: ${a[a.length-1]},`);
+    if(b - sortprices[0] >= 0){
+        newbudget = b - sortprices[0];
+        console.log(newbudget);
+        sortprices.shift();
+        gifts++;
+        maximumToys(sortprices, newbudget, gifts)
+    } else {
+        return gifts;
+    }
 
-    return
 }
 
-
-console.log(bubblesort(arr));
+console.log(maximumToys(pricesArr, 8, 0));
