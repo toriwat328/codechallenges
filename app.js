@@ -690,17 +690,24 @@
 const alternatingCharacters = (s) => {
     let deletions = 0;
     let string = s.split('');
-    // console.log(string);
+    console.log(string);
 
-    for(let i = 0; i <= string.length-1; i++){
-        if(string[i] === string[i+1]){
-            console.log(string);
-            string.shift(string[i]);
+
+
+    for(let i = 0; i < string.length; i++){
+        console.log(string[i], i);
+        if(string[i] === string[i + 1]){
+            console.log(`to be removed: ${string[i]}, ${i}`);
+            string.splice(i, 1);
             deletions++;
+            i = i - 1
+            console.log(string);
         }
     }
+    console.log(string);
+
 
     return deletions;
 }
 
-console.log(alternatingCharacters('AAAA'));
+console.log(alternatingCharacters('ABABABAB'));
