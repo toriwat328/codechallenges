@@ -2,6 +2,8 @@
 
 //Weighted Quick Union modifies quick union to aviod tall trees
 
+//Weighted Quick Union with Path Compression is not quick linear in theory but it is linear in practice. 
+
 //keep track of tree size (number of nodes)
 
 //Balance by linking root of smaller tree to root of larger tree
@@ -25,6 +27,9 @@ const root = (i) => {
     //chase parent pointers until reach root (depth of i accesses)
     while(i != id[i]){
         i = id[i];
+        //to add path compression and further optimize add this line by having every other node point to its grandparent (thereby halving the length)
+        id[i] = id[id[i]];
+
         return i;
     }
 }
