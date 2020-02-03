@@ -2,10 +2,10 @@
 
 //Quick Union is too slow and too expensive
 
+let id = [];
 
 const quickunionSetup = (n) => {
     //set id of each object to itself
-    let id = [];
     for(let i = 0; i < n; i++){
         id[i] = i;
     }
