@@ -15,6 +15,7 @@ const quickunionSetup = (n) => {
 const root = (i) => {
     //chase parent pointers until reach root (depth of i accesses)
     while(i != id[i]){
+        i = id[i];
         return i;
     }
 }
