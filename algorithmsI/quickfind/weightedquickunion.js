@@ -1,6 +1,10 @@
-//Quick Union Javascript implementation
+//Weighted Quick Union Javascript implementation
 
-//Quick Union is too slow and too expensive
+//Weighted Quick Union modifies quick union to aviod tall trees
+
+//keep track of tree size (number of nodes)
+
+//Balance by linking root of smaller tree to root of larger tree
 
 
 const quickfindSetup = (n) => {

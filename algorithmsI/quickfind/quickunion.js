@@ -3,7 +3,7 @@
 //Quick Union is too slow and too expensive
 
 
-const quickfindSetup = (n) => {
+const quickunionSetup = (n) => {
     //set id of each object to itself
     let id = [];
     for(let i = 0; i < n; i++){
