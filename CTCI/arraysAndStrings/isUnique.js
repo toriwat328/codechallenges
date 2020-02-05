@@ -45,8 +45,34 @@ const isUnique = (str) => {
         char_set[val] = true;
     }
 
-    //if the string went through the process and did not return false, return true. 
+    //if the string went through the process and did not return false, return true.
     return true;
 }
 
-console.log(isUnique('helo'));
+// console.log(isUnique('helo'));
+
+
+//Can reduce space by a factor of 8 by using a bit vector
+
+//assuming string only has lowercase letters a-z , can use a single int now
+
+const isUniqueChars = (str) => {
+    let checker = 0;
+    for(let i = 0; i < str.length; i++){
+        let val = str.charAt(i) - 'a';
+        if((checker & (1 < val)) > 0){
+            return false;
+        }
+        checker |= (1 < val);
+    }
+    return true;
+}
+
+console.log(isUniqueChars('hello'));
+
+
+//if we can use additional data structure -> have 2 for loops within each other n^2 run time 0(1) space
+
+//if you are allowed to modify the string, you can sort the string and see if there are adjacent characters that are the same. but sorting takes up a lot of extra space
+
+//Not optimial but depends of the constrants of the problems
