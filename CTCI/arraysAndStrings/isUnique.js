@@ -6,25 +6,6 @@
 
 //For simplicity the character set is ASCII. If not you would need to increase the storage size
 
-const isUniqueMe = (str) => {
-    // let includeChar = 0;
-    // for(let i of str){
-    //     let character = str.charAt(i)
-    //     if(str.includes(i)){
-    //         includeChar++;
-    //     }
-    // }
-    //
-    // console.log(includeChar);
-    //
-    // if(includeChar === 0){
-    //     return false;
-    // } else {
-    //     return true;
-    // }
-
-}
-
 const isUnique = (str) => {
     //There are only 128 characters in a ASCII alphabet so if there are more than 128 characters in the string it would not have all unique characters therefore returning false
     if(str.length > 128){
@@ -76,3 +57,22 @@ console.log(isUniqueChars('hello'));
 //if you are allowed to modify the string, you can sort the string and see if there are adjacent characters that are the same. but sorting takes up a lot of extra space
 
 //Not optimial but depends of the constrants of the problems
+
+const isUniqueMe = (str) => {
+    // let includeChar = 0;
+    // for(let i of str){
+    //     let character = str.charAt(i)
+    //     if(str.includes(i)){
+    //         includeChar++;
+    //     }
+    // }
+    //
+    // console.log(includeChar);
+    //
+    // if(includeChar === 0){
+    //     return false;
+    // } else {
+    //     return true;
+    // }
+
+}
