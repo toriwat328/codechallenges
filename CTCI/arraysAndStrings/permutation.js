@@ -44,7 +44,7 @@ const permutationCount = (str1, str2) => {
         }
     }
 
-    console.log(letters);
+    // console.log(letters);
 
 
     for(let i = 0; i < str2.length; i++){
@@ -52,7 +52,7 @@ const permutationCount = (str1, str2) => {
         let c = str2.charAt(i);
         //if the current letter from str2 is present in the string one, if we remove the count and it is a true permutation, there would be no negative numbers and return true otherwise it will return false.
         letters[c] -= 1;
-        console.log(letters);
+        // console.log(letters);
 
         if(letters[c] < 0){
             return false;
