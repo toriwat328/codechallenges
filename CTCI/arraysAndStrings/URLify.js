@@ -52,8 +52,6 @@
 const replaceSpaces2 = (str, trueLength) => {
     let newString = str.substr(0, trueLength).replace(/ /gi, '%20')
 
-    // let finalString = newString
-
     return newString;
 
 }
