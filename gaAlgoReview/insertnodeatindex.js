@@ -1,3 +1,5 @@
+const util = require('util');
+
 class Node {
     constructor(data, next = null){
         this.data = data
@@ -5,11 +7,29 @@ class Node {
     }
 }
 
-// class LinkedList {
-//     constructor(){
-//         this.head
-//     }
-// }
+class LinkedList {
+    constructor(){
+        this.head = null;
+        this.size = 0
+
+    }
+
+    insertFirst(data){
+        this.head = new Node(data, this.head)
+        this.size++;
+        return;
+    }
+
+    printListData(){
+        let current = this.head
+
+        while(current){
+            console.log(current.data);
+            current = current.next;
+        }
+
+    }
+}
 
 const insertNodeAtPosition = (head, data, position) => {
     //have to create an instance of the node class in order to access atrributes like data and next
@@ -28,33 +48,30 @@ const insertNodeAtPosition = (head, data, position) => {
     //set up counter
     let counter = 0;
     //if 1 plus counter is less that position, traverse through the linked list
+    //pre-increment (increment the variable and the value of the expression is the final value ) vs. post-increment remember the original value then increment the variable, the value of the expression is the original value
     while(++counter < position){
+        console.log('counter is at: ' + counter);
         current = current.next;
     }
 
-    //when 1 plus counter is equal to positon, set the node next value equal to current node's next node.
-    node.next = current.next;
-    current.next = node;
+
+console.log(util.inspect(ll, {showHidden: false, depth: null, colors:true}));
+    node.next = current.next; //making space by setting node's next value to what ever current's next value is
+    current.next = node; //setting current's next value equal to the new node to insert it.
+console.log(util.inspect(ll, {showHidden: false, depth: null, colors:true}));
 
     return head;
 }
 
 
+const ll = new LinkedList();
 
-//attempt
-// let current = head;
-// let previous;
-// let count = 0;
-//
-// while(current){
-//     if(count+1 === position){
-//         data.next = current;
-//         previous.next = data;
-//         return;
-//     }
-//     previous = current;
-//     count++;
-//     current = current.next ;
-// }
-//
-// return head;
+ll.insertFirst(100);
+ll.insertFirst(200);
+ll.insertFirst(300);
+ll.insertFirst(400);
+
+insertNodeAtPosition(ll.head, 150, 1);
+
+
+// ll.printListData()
