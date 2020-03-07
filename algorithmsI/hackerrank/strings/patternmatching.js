@@ -42,4 +42,4 @@ const makepattern = (pattern, word) => {
 
 }
 
-console.log(makepattern('d1tadog', 'datadog'));
+console.log(makepattern('2', 'ae'));
