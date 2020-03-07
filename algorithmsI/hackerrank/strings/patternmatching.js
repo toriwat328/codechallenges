@@ -19,6 +19,7 @@ const makepattern = (pattern, word) => {
         if(!isNaN(splitpattern[i])){
             number.push(parseInt(splitpattern[i]));
             splitpattern.splice(i, 1);
+            break;
         }
     }
 
@@ -41,4 +42,4 @@ const makepattern = (pattern, word) => {
 
 }
 
-console.log(makepattern('2eeee', 'e'));
+console.log(makepattern('d1tadog', 'datadog'));
