@@ -34,4 +34,4 @@ const reverse = (x) => {
     return final;
 }
 
-console.log(reverse(120));
+console.log(reverse(-123));
