@@ -6,12 +6,10 @@ const insertsearch = (nums, target) => {
         index = nums.indexOf(target);
     }else {
         for(let i = 0; i < nums.length; i++){
-            console.log(nums[i] < target && nums[i+1] > target, i);
-            if(nums[i] < target && nums[i+1] > target){
-                nums.splice(i, 0, target);
-                index = i;
-                console.log(index, 'new');
-                break;
+            if(target >= nums[i]){
+                index = i+1
+            }else if(target < nums[0]){
+                index = 0
             }
         }
     }

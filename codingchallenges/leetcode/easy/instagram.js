@@ -5,8 +5,6 @@ const freq = {};
 const freq2 = {};
 
 
-
-
 for(let i = 0; i < instagram.length; i++){
     let char = instagram.charAt(i)
     if(freq[char]){

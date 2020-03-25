@@ -1,4 +1,4 @@
-const = isPrime (num) => {
+const isPrime = (num) => {
     // if the number is 0 or 1 it is not a prime number
     if(num < 2) {
         return false;
